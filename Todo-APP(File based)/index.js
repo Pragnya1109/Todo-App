@@ -35,7 +35,7 @@ async function writeTodos(todos) {
 }
 
 // route to get all todos
-app.get('/', async (req,res)=>{
+app.get('/todos', async (req,res)=>{
     const todos = await readTodos()
     if(!todos) res.json({message: "No todos till now !!"})
     res.json(todos)
