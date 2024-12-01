@@ -1,4 +1,4 @@
-# To-Do App (Array based)
+# To-Do App (File based)
 
 This is a simple To-Do App built with Node.js and Express.js that uses in-memory storage (no database) to manage to-do tasks. It supports basic CRUD operations (Create, Read, Update, Delete).
 

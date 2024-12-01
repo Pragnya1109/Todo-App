@@ -1,12 +1,13 @@
 const express = require('express');
+const fs = require('fs/promises')
+const path = require('path')
+
+const app = express();
+const router = express.Router()
+
 
 const PORT = 5000
 
-const fs = require('fs/promises')
-const path = require('path')
-const app = express();
-
-const router = express.Router()
 app.use(express.json());
 
 
@@ -95,11 +96,6 @@ app.delete('/todos/delete/:id', async (req,res) => {
     await writeTodos(todos)
     res.json({message: "Task deleted successfully", deletedTodo})
 })
-
-// app.use((err, req, res, next) => {
-//     console.error(err);
-//     res.status(500).json({ error: "Something went wrong!" });
-// });
 
 app.listen(PORT, ()=>{
     console.log(`Server is running on PORT ${PORT}`)
